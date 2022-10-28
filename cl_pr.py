@@ -2,7 +2,7 @@ import requests
 import pandas
 api_key="jiFu34s"
 timeout=5
-appid=2
+appid=0
 def Init(aid):
     global appid
     appid=aid
@@ -18,6 +18,7 @@ def AddTokens(student_id,token_amount,description):
     URL = "https://cp.lshss.xyz/add_tokens.php"
     data = {'student_id':student_id,"api_key":api_key,"token_amount":token_amount,"description":description,"appid":appid}
     r = requests.post(url = URL, data = data,timeout=timeout)
+   
     data = r.json()
     return data
 def AddScore(player_name,score):
@@ -98,7 +99,7 @@ def GetTotalTokensIssued():
     return data
 #print(GetTotalTokensIssued())
 #ShowTotalTokensIssued()
-#print(AddTokens(500,20,"Winner"))
+#print(AddTokens(501,20,"Winner"))
 #print(GetTokenTransactions(1))
 #ShowTokenTransactions(1)
 #print(AddScore("Op",55))  
@@ -106,4 +107,4 @@ def GetTotalTokensIssued():
 #print(GetStudentDetails(5))
 #print(GetTokenTransactions(20))
 #print(GetRecentTokenTransactions(20))
-#ShowRecentTokenTransactions()
+##ShowRecentTokenTransactions()
